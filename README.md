@@ -1,6 +1,6 @@
 ![Astro](https://img.shields.io/badge/Astro-Portfolio-orange)
 ![Tailwind](https://img.shields.io/badge/TailwindCSS-Styling-blue)
-![Vercel](https://img.shields.io/badge/Deployed-Vercel-black)
+![Netlify](https://img.shields.io/netlify/650ca9fc-6b4d-4ed4-8fca-72970858af2a)
 
 # Daniel Suarez — Portfolio
 
