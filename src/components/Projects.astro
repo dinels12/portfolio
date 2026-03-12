@@ -20,6 +20,7 @@ const projects = [
     ],
     links: [
       { label: "Live", href: "https://aloharmony.com" },
+      { label: "Web", href: "https://app.aloharmony.com" },
       { label: "Android", href: "https://play.google.com/store/apps/details?id=com.aloharmony.app" },
       { label: "iOS", href: "https://apps.apple.com/us/app/aloharmony/id1597463081" },
     ],
@@ -165,8 +166,22 @@ const projects = [
                 <span class="text-xs bg-surface2 text-ink2 border border-border px-2 py-0.5 rounded font-medium">{t}</span>
               ))}
             </div>
+             <!-- Links -->
+            {p.links.length > 0 && (
+              <div class="flex gap-3 mt-6">
+                {p.links.map(l => (
+                  <a href={l.href} target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent no-underline hover:text-accent2 transition-colors">
+                    {l.label}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
+          
         </div>
+        
       ))}
     </div>
 
