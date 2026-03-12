@@ -1,13 +1,27 @@
 // @ts-check
+import mdx from "@astrojs/mdx";
 import compress from "@playform/compress";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
+
 // const isProd = import.meta.env.PROD;
 
 // https://astro.build/config
 export default defineConfig({
-  //   site: "https://aloharmony.com",
+  //   site: "https://danielsuarez.com",
   //   base: "/",
+  content: {
+    collections: {
+      blog: {
+        type: "content",
+      },
+    },
+  },
+  markdown: {
+    shikiConfig: {
+      theme: "github-dark",
+    },
+  },
   experimental: {
     fonts: [
       {
@@ -48,5 +62,6 @@ export default defineConfig({
       CSS: true,
       JavaScript: true,
     }),
+    mdx(),
   ],
 });

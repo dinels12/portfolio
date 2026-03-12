@@ -17,7 +17,7 @@ import "../styles/global.css";
 //   .slice(0, 3);
 const posts = await getCollection("blog");
 // // You can sort them by date as needed
-const latestPosts = posts.sort((a: any, b: any) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const latestPosts = posts.sort((a: any, b: any) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <Base>
@@ -50,9 +50,9 @@ const latestPosts = posts.sort((a: any, b: any) => b.data.pubDate.getTime() - a.
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {latestPosts.map((post: any) => (
+              {latestPosts.map(({ data: post, slug }: any) => (
                 <a
-                  href={post.url}
+                  href={`/blog/${slug}`}
                   class="reveal group bg-canvas border border-border rounded-xl p-6 no-underline hover:border-border2 hover:shadow-sm transition-all duration-200 flex flex-col"
                 >
                   <div class="mb-3">

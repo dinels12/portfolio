@@ -1,11 +1,13 @@
-// src/content/config.ts
 import { defineCollection, z } from "astro:content";
 
 const blogCollection = defineCollection({
+  type: "content",
   schema: z.object({
     title: z.string(),
-    pubDate: z.date(),
-    // ... other frontmatter properties
+    excerpt: z.string(),
+    date: z.string(),
+    tag: z.string().optional(),
+    readTime: z.string().optional(),
   }),
 });
 

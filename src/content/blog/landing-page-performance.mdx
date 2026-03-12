@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "From 3 Seconds to 200ms: How We Fixed the Landing Page"
 excerpt: "A slow landing page was killing conversions. Here's the full breakdown of what was wrong and exactly how we fixed it."
 date: "2025-03-05"
@@ -37,20 +36,21 @@ The result was that a user in Buenos Aires hitting the page was no longer waitin
 The landing page had several hero images that were being served as full-resolution PNGs. Switching to Next.js's `Image` component handled most of the work automatically:
 
 ```jsx
-import Image from 'next/image';
+import Image from "next/image";
 
 <Image
   src="/hero.png"
   alt="App screenshot"
   width={1200}
   height={800}
-  priority  // preload for above-the-fold images
+  priority // preload for above-the-fold images
   placeholder="blur"
   blurDataURL={blurDataUrl}
-/>
+/>;
 ```
 
 This automatically:
+
 - Converts to WebP for supported browsers
 - Serves appropriately sized images based on the user's device
 - Lazy loads below-the-fold images
@@ -68,12 +68,12 @@ The key configuration decision was cache TTLs. We set:
 
 We used Lighthouse and WebPageTest to measure before/after. The headline numbers:
 
-| Metric | Before | After |
-|--------|--------|-------|
-| LCP | ~3.2s | ~0.8s |
-| FCP | ~2.8s | ~0.4s |
-| TTI | ~4.1s | ~1.2s |
-| Load (3G) | ~8s | ~2.1s |
+| Metric    | Before | After |
+| --------- | ------ | ----- |
+| LCP       | ~3.2s  | ~0.8s |
+| FCP       | ~2.8s  | ~0.4s |
+| TTI       | ~4.1s  | ~1.2s |
+| Load (3G) | ~8s    | ~2.1s |
 
 The conversion rate improvement was material. Faster landing pages convert better — this is well-established — but it's still satisfying to see it happen in your own numbers.
 

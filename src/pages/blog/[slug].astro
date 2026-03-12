@@ -1,0 +1,92 @@
+---
+import { getCollection } from "astro:content";
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.astro";
+import Base from "../../layouts/Base.astro";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, excerpt, date, tag, readTime } = post.data;
+---
+
+<Base title={`${title} — Daniel Suarez`} description={excerpt}>
+  <Nav />
+
+  <main class="pt-28 pb-24">
+    <div class="max-w-2xl mx-auto px-6">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink no-underline mb-10 transition-colors"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          ><path d="M19 12H5M12 5l-7 7 7 7"></path></svg
+        >
+        All posts
+      </a>
+
+      <header class="mb-12">
+        {
+          tag && (
+            <span class="inline-block text-xs bg-tag-bg text-tag-text border border-blue-100 px-2.5 py-0.5 rounded-full font-medium font-mono mb-4">
+              {tag}
+            </span>
+          )
+        }
+        <h1 class="font-display text-4xl font-bold tracking-tight text-ink leading-tight mb-4">{title}</h1>
+        <p class="text-base text-ink2 leading-relaxed mb-6">{excerpt}</p>
+        <div class="flex items-center gap-4 text-xs font-mono text-muted">
+          <span>{new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
+          {
+            readTime && (
+              <>
+                <>
+                  <span>·</span>
+                  <span>{readTime}</span>
+                </>
+              </>
+            )
+          }
+        </div>
+      </header>
+
+      <hr class="border-border mb-12" />
+
+      <div class="prose-blog">
+        <Content />
+      </div>
+
+      <hr class="border-border mt-14 mb-10" />
+
+      <div class="bg-surface border border-border rounded-xl p-6 flex gap-4 items-start">
+        <div
+          class="w-10 h-10 rounded-full bg-ink flex items-center justify-center text-canvas font-display font-bold text-sm shrink-0"
+        >
+          DS
+        </div>
+        <div>
+          <div class="font-semibold text-sm text-ink">Daniel Suarez</div>
+          <div class="text-xs text-muted mt-0.5 mb-3">Senior Full-Stack Engineer · Buenos Aires</div>
+          <div class="flex gap-3">
+            <a
+              href="https://linkedin.com/in/dinels"
+              target="_blank"
+              class="text-xs text-accent no-underline hover:text-accent2">LinkedIn</a
+            >
+            <a href="mailto:dinels12@gmail.com" class="text-xs text-accent no-underline hover:text-accent2">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

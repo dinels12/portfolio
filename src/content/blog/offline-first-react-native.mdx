@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "Building an Offline-First React Native App: What I Learned"
 excerpt: "Audio streaming, unreliable connections, and thousands of users. Here's the architecture that made Aloharmony's mobile app work anywhere."
 date: "2025-02-20"
@@ -35,13 +34,13 @@ const useSessionStore = create(
       pendingSyncs: [],
       markComplete: (sessionId) => {
         const record = { sessionId, completedAt: Date.now() };
-        set(state => ({
+        set((state) => ({
           completedSessions: [...state.completedSessions, record],
-          pendingSyncs: [...state.pendingSyncs, { type: 'COMPLETE', data: record }],
+          pendingSyncs: [...state.pendingSyncs, { type: "COMPLETE", data: record }],
         }));
       },
     }),
-    { name: 'session-store' }
+    { name: "session-store" }
   )
 );
 ```
