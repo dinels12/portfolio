@@ -10,8 +10,7 @@ const projects = [
     subtitle: "Meditation Platform",
     description:
       "Built the full product from scratch as CTO/Lead Engineer — React Native mobile app with offline-first architecture, NestJS + GraphQL backend (90+ endpoints), Next.js web platform, and complete AWS infrastructure. Scaled to 16k+ registered users and 1,300 daily active users.",
-      image: null,
-    // image: "/projects/aloharmony.png",     // replace with your screenshot
+    image: "/projects/aloharmony.webp",
     placeholderGradient: "from-blue-50 to-indigo-100",
     tags: ["React Native", "Next.js", "NestJS", "GraphQL", "AWS", "Stripe"],
     metrics: [
@@ -21,27 +20,17 @@ const projects = [
     ],
     links: [
       { label: "Live", href: "https://aloharmony.com" },
+      { label: "Android", href: "https://play.google.com/store/apps/details?id=com.aloharmony.app" },
+      { label: "iOS", href: "https://apps.apple.com/us/app/aloharmony/id1597463081" },
     ],
     featured: true,
   },
   {
-    title: "Ninifarm",
-    subtitle: "Analytics & Discord Integration",
-    description:
-      "Analytics platform integrated with a Discord bot that analyzed community message activity and generated visual metrics dashboards. Real-time data pipeline with React frontend and GraphQL API.",
-    image: null,
-    placeholderGradient: "from-emerald-50 to-teal-100",
-    tags: ["React", "GraphQL", "Discord API", "Node.js"],
-    metrics: [],
-    links: [],
-    featured: false,
-  },
-  {
     title: "Subliful",
-    subtitle: "Mobile Subscription Platform",
+    subtitle: "Mobile Companion App",
     description:
-      "React Native mobile platform built as part of the CRIZZ product ecosystem. Subscription management with GraphQL API, offline support, and cross-platform iOS/Android delivery.",
-    image: null,
+      "Mobile companion app built with React Native for iOS and Android. Delivers daily inspiration, reflections, and personal growth challenges. Built as part of the CRIZZ ecosystem with GraphQL backend and subscription management.",
+    image: "/projects/subliful.webp",
     placeholderGradient: "from-violet-50 to-purple-100",
     tags: ["React Native", "GraphQL", "Expo", "Node.js"],
     metrics: [],
@@ -51,13 +40,13 @@ const projects = [
     featured: false,
   },
   {
-    title: "TaxMambo",
-    subtitle: "Mobile Tax Calculator",
+    title: "XProfit",
+    subtitle: "Finance Analytics Platform",
     description:
-      "React Native mobile application for on-the-go tax calculations. Shipped to the App Store with clean UX, real-time calculations, and support for multiple tax scenarios.",
-    image: null,
-    placeholderGradient: "from-amber-50 to-yellow-100",
-    tags: ["React Native", "Expo", "Node.js"],
+      "Finance analytics platform that extracts accounting data to help businesses understand their financial health and make better decisions. Built the full web platform and backend as Technical Leader at CRIZZ.",
+    image: "/projects/xprofit.webp",
+    placeholderGradient: "from-emerald-50 to-teal-100",
+    tags: ["React", "Node.js", "NestJS", "GraphQL"],
     metrics: [],
     links: [],
     featured: false,
@@ -86,9 +75,9 @@ const projects = [
       <div class="reveal mb-8 rounded-2xl border border-border bg-canvas overflow-hidden">
         <div class="grid md:grid-cols-2">
           <!-- Image / placeholder -->
-          <div class={`relative aspect-[4/3] md:aspect-auto bg-gradient-to-br ${p.placeholderGradient} overflow-hidden`}>
+          <div class={`relative aspect-4/3 md:aspect-auto bg-linear-to-br ${p.placeholderGradient} overflow-hidden`}>
             {p.image
-              ? <img src={p.image} alt={p.title} class="w-full h-full object-cover" loading="lazy" />
+              ? <img src={p.image} alt={p.title} class="w-full h-full object-contain" loading="lazy" />
               : (
                 <div class="absolute inset-0 flex items-center justify-center">
                   <div class="text-center">
@@ -155,7 +144,7 @@ const projects = [
       {projects.filter(p => !p.featured).map(p => (
         <div class="reveal rounded-xl border border-border bg-canvas overflow-hidden hover:border-border2 hover:shadow-sm transition-all duration-200 flex flex-col">
           <!-- Image / placeholder -->
-          <div class={`relative h-44 bg-gradient-to-br ${p.placeholderGradient}`}>
+          <div class={`relative h-44 bg-linear-to-br ${p.placeholderGradient}`}>
             {p.image
               ? <img src={p.image} alt={p.title} class="w-full h-full object-cover" loading="lazy" />
               : (
