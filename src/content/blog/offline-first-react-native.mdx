@@ -1,0 +1,74 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Building an Offline-First React Native App: What I Learned"
+excerpt: "Audio streaming, unreliable connections, and thousands of users. Here's the architecture that made Aloharmony's mobile app work anywhere."
+date: "2025-02-20"
+tag: "React Native"
+readTime: "8 min read"
+---
+
+## Why offline-first matters for a meditation app
+
+A meditation app has an unusual constraint: users open it precisely when they want to disconnect from the world — on a plane, in a park, before bed with their phone in airplane mode. If your app requires a network connection to play a session, you've failed the core use case.
+
+When I built the Aloharmony mobile app, offline-first wasn't a nice-to-have. It was the product.
+
+## The architecture
+
+The system has three layers working together:
+
+**1. Content cache** — Audio files and session metadata are downloaded in the background when the user is on WiFi. We use Expo's `FileSystem` API to persist audio locally and a simple SQLite-backed cache to track what's available offline.
+
+**2. Optimistic UI** — Every user action (completing a session, updating a streak, saving a favorite) is applied immediately to local state and then synced to the backend. If the sync fails, we queue it for retry.
+
+**3. Conflict resolution** — When the app comes back online after a long offline period, we need to reconcile local and remote state. For Aloharmony, the rules are simple: server wins for content, client wins for completion records (the user's session history is authoritative on their device).
+
+## The state management choice
+
+We use Zustand for local state, which turned out to be a great fit for offline-first apps. Its simple, flat store structure made it easy to serialize to AsyncStorage for persistence across app restarts.
+
+```javascript
+const useSessionStore = create(
+  persist(
+    (set, get) => ({
+      completedSessions: [],
+      pendingSyncs: [],
+      markComplete: (sessionId) => {
+        const record = { sessionId, completedAt: Date.now() };
+        set(state => ({
+          completedSessions: [...state.completedSessions, record],
+          pendingSyncs: [...state.pendingSyncs, { type: 'COMPLETE', data: record }],
+        }));
+      },
+    }),
+    { name: 'session-store' }
+  )
+);
+```
+
+The `pendingSyncs` queue is processed whenever the app detects a network connection. We use React Native's `NetInfo` library to listen for connectivity changes.
+
+## Audio streaming vs. local playback
+
+This was a harder decision than it sounds. Streaming audio from CloudFront is simpler to build and keeps the app binary small. But it means every playback event depends on network quality.
+
+Our hybrid approach:
+
+- **Free content**: streamed via CloudFront. Fast to ship, acceptable for casual users.
+- **Subscribed content**: downloaded in the background after purchase. The download happens silently while the user is on WiFi, and the app prefers the local file when it exists.
+
+The key insight was that we didn't need to choose one or the other globally — we could choose per-asset based on the user's subscription status.
+
+## What would I do differently
+
+**Start with offline-first constraints earlier.** I added the offline layer after the core app was built, which meant retrofitting a lot of network-dependent code. If I were starting over, I'd design the data flow assuming no network from day one.
+
+**Be more aggressive about pre-fetching.** We currently download content on demand. A smarter system would predict what the user is likely to play next (based on their history and active program) and pre-fetch it before they tap.
+
+**Better user feedback.** Our "available offline" indicator is a small icon. Users don't always notice it. The download UX deserves more design investment.
+
+## The result
+
+The offline architecture paid off in user feedback. One of the most common phrases in our app store reviews was "works great on flights" — which meant the product was reaching people in exactly the moments it was designed for.
+
+Building mobile apps that work without a network is harder than building ones that don't. But when your product's core value is delivered in quiet, disconnected moments, it's not optional.

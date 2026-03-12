@@ -1,26 +1,73 @@
 ---
 const links = [
-  { href: "#experience", label: "Experience" },
-  { href: "#skills",     label: "Skills" },
-  { href: "#education",  label: "Education" },
-  { href: "#contact",    label: "Contact" },
+  { href: "/",          label: "Home"       },
+  { href: "/#work",     label: "Work"       },
+  { href: "/#experience", label: "Experience" },
+  { href: "/blog",      label: "Blog"       },
+  { href: "/#contact",  label: "Contact"    },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-8 border-b border-border bg-bg/85 backdrop-blur-md">
-  <a href="#hero" class="font-display text-lg font-bold text-accent tracking-tight no-underline">
-    ds.
-  </a>
-  <ul class="hidden md:flex gap-8 list-none m-0 p-0">
-    {links.map(l => (
-      <li>
+<header class="fixed top-0 left-0 right-0 z-50 bg-canvas/90 backdrop-blur-sm border-b border-border">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+
+    <a href="/" class="font-display font-semibold text-base text-ink tracking-tight no-underline">
+      Daniel Suarez
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1">
+      {links.map(l => (
         <a
           href={l.href}
-          class="text-muted hover:text-body text-xs font-semibold uppercase tracking-widest transition-colors duration-200 no-underline"
+          class={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-150 no-underline
+            ${currentPath === l.href
+              ? 'bg-surface2 text-ink'
+              : 'text-muted hover:text-ink hover:bg-surface2'
+            }`}
         >
           {l.label}
         </a>
-      </li>
+      ))}
+    </nav>
+
+    <a
+      href="mailto:dinels12@gmail.com"
+      class="hidden md:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-accent text-white text-sm font-semibold no-underline hover:bg-accent2 transition-colors duration-150"
+    >
+      Hire me
+    </a>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 rounded-md text-muted hover:text-ink hover:bg-surface2 transition-colors"
+      aria-label="Toggle menu"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-canvas px-6 py-4 flex flex-col gap-1">
+    {links.map(l => (
+      <a href={l.href} class="px-3 py-2 rounded-md text-sm font-medium text-muted hover:text-ink hover:bg-surface2 no-underline transition-colors">
+        {l.label}
+      </a>
     ))}
-  </ul>
-</nav>
+    <a href="mailto:dinels12@gmail.com" class="mt-2 px-3 py-2 rounded-md text-sm font-semibold text-accent no-underline">
+      Hire me →
+    </a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+</script>

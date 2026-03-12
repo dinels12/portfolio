@@ -1,21 +1,38 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
 }
-const { title = "Daniel Suarez | Senior Full-Stack Engineer" } = Astro.props;
+const {
+  title = "Daniel Suarez — Senior Full-Stack Engineer",
+  description = "Senior Full-Stack Engineer specializing in React, React Native, Node.js and AWS. Building scalable web and mobile products.",
+} = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content="Senior Full-Stack Engineer with 5+ years building scalable web and mobile products. React, React Native, Node.js, AWS." />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400;0,75..100,500;0,75..100,600;1,75..100,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-bg text-body font-sans antialiased">
+  <body class="bg-canvas text-ink font-sans antialiased">
     <slot />
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+        { threshold: 0.08 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

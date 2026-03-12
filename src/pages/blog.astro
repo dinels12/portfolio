@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
+
+// Grab all MDX posts from content/blog/
+const posts = await getCollection("blog");
+// // You can sort them by date as needed
+const sorted = posts
+  .map((p: any) => ({ ...p.frontmatter, url: p.url }))
+  .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Base
+  title="Blog — Daniel Suarez"
+  description="Writing about full-stack engineering, React, Node.js, cloud architecture, and lessons from shipping real products."
+>
+  <Nav />
+
+  <main class="pt-28 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="mb-14">
+        <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">Writing</p>
+        <h1 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Blog</h1>
+        <p class="text-base text-ink2">
+          Thoughts on full-stack engineering, system design, React Native, and lessons learned shipping products at
+          scale.
+        </p>
+      </div>
+
+      {
+        sorted.length === 0 && (
+          <div class="rounded-xl border border-border bg-surface p-10 text-center">
+            <p class="text-muted text-sm">No posts yet — check back soon.</p>
+            <p class="text-xs text-muted/60 mt-2 font-mono">Add .mdx files to src/content/blog/</p>
+          </div>
+        )
+      }
+
+      <div class="flex flex-col divide-y divide-border">
+        {
+          sorted.map((post: any) => (
+            <a
+              href={post.url}
+              class="group py-7 no-underline flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 hover:opacity-80 transition-opacity"
+            >
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  {post.tag && (
+                    <span class="text-xs bg-tag-bg text-tag-text border border-blue-100 px-2 py-0.5 rounded-full font-medium font-mono">
+                      {post.tag}
+                    </span>
+                  )}
+                </div>
+                <h2 class="font-display text-xl font-semibold text-ink group-hover:text-accent transition-colors mb-1">
+                  {post.title}
+                </h2>
+                <p class="text-sm text-muted leading-relaxed">{post.excerpt}</p>
+              </div>
+              <div class="shrink-0 font-mono text-xs text-muted sm:text-right sm:pt-1">
+                {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                {post.readTime && <div class="mt-0.5">{post.readTime}</div>}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

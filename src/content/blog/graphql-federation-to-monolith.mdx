@@ -1,0 +1,60 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Why We Migrated from GraphQL Federation to a Monolith"
+excerpt: "We had microservices. They were slowing us down. Here's the honest story of why we went back to a monolith — and why it was the right call at our stage."
+date: "2025-01-15"
+tag: "Architecture"
+readTime: "6 min read"
+---
+
+## The starting point
+
+When I joined Aloharmony as CTO, the backend was a GraphQL federation setup: multiple independent subgraph services, each owning its own schema slice, all federated through a gateway. On paper, it sounded mature. In practice, for a team of one engineer, it was a distributed systems tax we couldn't afford.
+
+Every feature required touching three repos. Local development needed five services running simultaneously. Schema changes cascaded. Deployment pipelines were fragile. And debugging a single request meant tracing it across multiple service logs.
+
+We had chosen a microservices architecture for scale we didn't have yet.
+
+## The real cost of premature distribution
+
+Microservices solve problems that come with scale — independent deployments, team autonomy, isolated failures. When you have one engineer and a product still finding its market, you're paying all the operational cost of distributed systems with none of the benefits.
+
+In our case, the symptoms were clear:
+
+- **Development velocity** had slowed down significantly. Adding a new API feature required coordinating schema changes across subgraphs.
+- **Local dev** required running a gateway, auth service, content service, and user service simultaneously. Docker Compose helped but the feedback loop was slow.
+- **Observability** was complex. Tracing a failed request required correlating logs across services.
+- **Cold start times** on ECS were compounding. Multiple services meant multiple containers to warm up.
+
+## The migration strategy
+
+We didn't rewrite anything. We merged.
+
+The strategy was to consolidate the subgraph schemas into a single NestJS application, keeping the same GraphQL API surface so the mobile and web clients required zero changes.
+
+**Step 1: Identify shared state.** The main reason microservices were painful was shared state — the auth service owned users, the content service needed users. We were doing inter-service HTTP calls for data that logically belonged together.
+
+**Step 2: Merge modules, not schemas.** NestJS's module system maps cleanly to what were previously separate services. We moved each service's resolvers and providers into a new NestJS module. The schema stayed identical.
+
+**Step 3: Collapse the infrastructure.** One ECS service instead of five. One database connection pool. One Redis instance. One deployment pipeline.
+
+## What we gained
+
+The results were immediate and measurable:
+
+- **Development speed** roughly doubled. New features that previously required touching multiple repos now live in one place.
+- **Cold start time** dropped significantly — one container instead of five.
+- **Debugging** became trivial. One log stream, one trace context.
+- **Infrastructure cost** went down — fewer ECS tasks, simpler networking.
+
+## When microservices make sense
+
+I want to be clear: microservices are the right choice — at the right scale. If you have multiple teams that need to deploy independently, if you have services with genuinely different scaling characteristics, if you're running at a scale where a single deployment pipeline becomes a bottleneck — then distributed architecture pays off.
+
+At 16k users with a team of one, we were not at that scale.
+
+## The lesson
+
+The right architecture isn't the most impressive one on a whiteboard. It's the one that lets your team ship fast, debug quickly, and sleep at night. Don't architecture for the company you hope to be — architecture for the company you are today, and design the system to be easy to distribute later if you need to.
+
+We kept the GraphQL API clean, the module boundaries clear, and the database schema sensible. If we hit the scale where microservices make sense, we'll extract services from modules — with full confidence in the seams we've already drawn.

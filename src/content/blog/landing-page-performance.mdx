@@ -1,0 +1,84 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "From 3 Seconds to 200ms: How We Fixed the Landing Page"
+excerpt: "A slow landing page was killing conversions. Here's the full breakdown of what was wrong and exactly how we fixed it."
+date: "2025-03-05"
+tag: "Performance"
+readTime: "5 min read"
+---
+
+## The problem
+
+Aloharmony's landing page was loading in around 3 seconds on a fast connection. On mobile, worse. The conversion rate on paid ads was poor, and I suspected the load time was a significant factor.
+
+When I profiled the page, the culprits were immediately obvious:
+
+- **No CDN** — assets were being served from the origin ECS container
+- **Client-side rendering** — the entire page was a React SPA that required JS to render any content
+- **Unoptimized images** — full-resolution PNGs being served without compression or sizing
+- **No caching headers** — every visit re-fetched everything
+
+These are common problems. Fixing them systematically brought the load time down to around 200ms.
+
+## The fix: Next.js + CloudFront
+
+We migrated from a CRA-based React app to Next.js for static generation, then put CloudFront in front of it.
+
+Next.js gave us:
+
+- **Static generation (SSG)** for the marketing pages — the HTML is pre-built at deploy time, so there's no server rendering delay on the hot path
+- **`next/image`** for automatic image optimization — WebP conversion, responsive sizing, lazy loading
+- **Edge caching** — CloudFront caches the static assets at 200+ edge locations globally
+
+The result was that a user in Buenos Aires hitting the page was no longer waiting for a round trip to a US-East ECS container. They were getting a cached response from an edge node a few milliseconds away.
+
+## Image optimization specifics
+
+The landing page had several hero images that were being served as full-resolution PNGs. Switching to Next.js's `Image` component handled most of the work automatically:
+
+```jsx
+import Image from 'next/image';
+
+<Image
+  src="/hero.png"
+  alt="App screenshot"
+  width={1200}
+  height={800}
+  priority  // preload for above-the-fold images
+  placeholder="blur"
+  blurDataURL={blurDataUrl}
+/>
+```
+
+This automatically:
+- Converts to WebP for supported browsers
+- Serves appropriately sized images based on the user's device
+- Lazy loads below-the-fold images
+- Shows a blur placeholder while the full image loads
+
+## CloudFront cache configuration
+
+The key configuration decision was cache TTLs. We set:
+
+- **Static assets** (`_next/static/`): 1 year TTL — these are content-addressed by Next.js so cache-busting is automatic
+- **HTML pages**: 60 seconds TTL — short enough to pick up content updates, long enough to absorb traffic spikes
+- **API routes**: no caching — these are dynamic by definition
+
+## Measuring the impact
+
+We used Lighthouse and WebPageTest to measure before/after. The headline numbers:
+
+| Metric | Before | After |
+|--------|--------|-------|
+| LCP | ~3.2s | ~0.8s |
+| FCP | ~2.8s | ~0.4s |
+| TTI | ~4.1s | ~1.2s |
+| Load (3G) | ~8s | ~2.1s |
+
+The conversion rate improvement was material. Faster landing pages convert better — this is well-established — but it's still satisfying to see it happen in your own numbers.
+
+## The lesson
+
+Most performance problems are boring. They're not algorithmic complexity issues or clever optimization challenges. They're: missing CDN, unoptimized images, client-side rendering where static rendering would work, and no caching headers.
+
+Start with the boring stuff first. It's almost always the boring stuff.

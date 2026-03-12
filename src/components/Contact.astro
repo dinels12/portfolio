@@ -1,55 +1,49 @@
 ---
-const links = [
-  {
-    label: "dinels12@gmail.com",
-    href: "mailto:dinels12@gmail.com",
-    iconBg: "bg-accent/10",
-    iconColor: "#c9a96e",
-    icon: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>`,
-  },
-  {
-    label: "linkedin.com/in/dinels",
-    href: "https://linkedin.com/in/dinels",
-    external: true,
-    iconBg: "bg-accent3/10",
-    iconColor: "#7fa8c9",
-    icon: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>`,
-    iconFill: true,
-  },
-  {
-    label: "Buenos Aires, Argentina",
-    href: "#",
-    iconBg: "bg-accent2/10",
-    iconColor: "#8eb8a0",
-    icon: `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`,
-  },
-];
 ---
+<section id="contact" class="py-24 bg-surface border-t border-border">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-xl">
+      <p class="font-mono text-xs text-accent uppercase tracking-widest mb-3">Get in touch</p>
+      <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-5">
+        Let's work<br/><span class="italic font-normal text-muted">together.</span>
+      </h2>
+      <p class="text-base text-ink2 leading-relaxed mb-10">
+        I'm open to senior engineering roles, technical leadership positions, and interesting product collaborations.
+        If you're building something ambitious — let's talk.
+      </p>
 
-<section id="contact" class="py-24 pb-32">
-  <div class="max-w-3xl mx-auto px-8">
-
-    <div class="flex items-center gap-3 mb-3">
-      <span class="font-mono text-xs text-accent uppercase tracking-widest">Let's talk</span>
-      <span class="flex-1 h-px bg-border"></span>
-    </div>
-    <h2 class="font-display font-semibold text-3xl tracking-tighter text-body mb-10">Contact</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      {links.map(link => (
+      <div class="flex flex-col sm:flex-row gap-3 mb-12">
         <a
-          href={link.href}
-          target={link.external ? "_blank" : undefined}
-          rel={link.external ? "noopener noreferrer" : undefined}
-          class="fade-in flex items-center gap-3 bg-bg2 border border-border rounded-xl px-4 py-3.5 text-body text-sm font-medium no-underline hover:border-white/15 hover:bg-bg3 hover:-translate-y-0.5 transition-all duration-200"
+          href="mailto:dinels12@gmail.com"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-ink text-canvas rounded-lg text-sm font-semibold no-underline hover:bg-ink2 transition-colors"
         >
-          <div class={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${link.iconBg}`}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill={link.iconFill ? link.iconColor : "none"} stroke={link.iconFill ? "none" : link.iconColor} stroke-width="2" set:html={link.icon} />
-          </div>
-          {link.label}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          dinels12@gmail.com
         </a>
-      ))}
-    </div>
+        <a
+          href="https://linkedin.com/in/dinels"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-surface border border-border rounded-lg text-sm font-semibold text-ink no-underline hover:border-border2 transition-colors"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
 
+      <div class="flex items-center gap-4 text-sm text-muted">
+        <div class="flex items-center gap-1.5">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Buenos Aires, Argentina
+        </div>
+        <span>·</span>
+        <div>UTC-3</div>
+        <span>·</span>
+        <div class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+          Open to remote
+        </div>
+      </div>
+    </div>
   </div>
 </section>
