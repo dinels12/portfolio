@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: var(--font-sans), sans-serif;
+}
+
 @theme {
   /* Editorial light palette */
   --color-canvas: #f7f5f0;
@@ -18,9 +22,12 @@
   --color-tag-text: #2d5be3;
 
   /* Typography */
-  --font-sans: "Instrument Sans", sans-serif;
-  --font-display: "Lora", serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* --font-sans: "Instrument Sans Variable", sans-serif;
+  /* --font-display: "Lora", serif; */
+  /* --font-mono: "JetBrains Mono", monospace; */
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-display), serif;
+  --font-mono: var(--font-mono), monospace;
 }
 
 /* Scroll animations */

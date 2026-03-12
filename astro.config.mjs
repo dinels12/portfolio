@@ -1,5 +1,6 @@
 // @ts-check
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import compress from "@playform/compress";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
@@ -8,7 +9,8 @@ import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  //   site: "https://danielsuarez.com",
+  site: "https://portfolio-daniel-suarez.netlify.app",
+  // site: "https://danielsuarez.com",
   //   base: "/",
   content: {
     collections: {
@@ -26,13 +28,21 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.fontsource(),
-        name: "Inter",
-        cssVariable: "--font-inter",
+        name: "Instrument Sans",
+        cssVariable: "--font-sans",
+        weights: [400, 500, 600, 700, "italic"],
       },
       {
         provider: fontProviders.fontsource(),
-        name: "Playfair Display",
-        cssVariable: "--font-playfair",
+        name: "Lora",
+        cssVariable: "--font-display",
+        weights: [400, 500, 600, 700, "italic"],
+      },
+      {
+        provider: fontProviders.fontsource(),
+        name: "JetBrains Mono",
+        cssVariable: "--font-mono",
+        weights: [100, 200, 300, 400, 500, 600, 700, 800, "italic"],
       },
     ],
   },
@@ -63,5 +73,6 @@ export default defineConfig({
       JavaScript: true,
     }),
     mdx(),
+    sitemap(),
   ],
 });
