@@ -1,11 +1,43 @@
 ---
-import Hero from "../components/Hero.astro";
-import Navbar from "../components/Navbar.astro";
+// src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import Education from "../components/Education.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-  <Navbar />
+<Layout title="Daniel Suarez | Senior Full-Stack Engineer">
+  <Nav />
 
-  <Hero />
+  <main>
+    <Hero />
+    <div class="border-t border-white/[0.07]"></div>
+    <Experience />
+    <div class="border-t border-white/[0.07]"></div>
+    <Skills />
+    <div class="border-t border-white/[0.07]"></div>
+    <Education />
+    <div class="border-t border-white/[0.07]"></div>
+    <Contact />
+  </main>
+
+  <Footer />
 </Layout>
+
+<!-- Fade-in observer (runs client-side after hydration) -->
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+</script>

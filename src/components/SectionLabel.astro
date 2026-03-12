@@ -1,0 +1,14 @@
+---
+// src/components/SectionLabel.astro
+interface Props {
+  label: string;
+}
+const { label } = Astro.props;
+---
+
+<div class="flex items-center gap-3 mb-3">
+  <span class="font-mono text-[0.68rem] text-accent tracking-[0.12em] uppercase">
+    {label}
+  </span>
+  <span class="flex-1 h-px bg-white/[0.07]"></span>
+</div>

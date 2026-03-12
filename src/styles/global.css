@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0c0f;
+  --color-bg2: #111317;
+  --color-bg3: #16181d;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-muted: #7a7870;
+  --color-accent: #c9a96e;
+  --color-accent2: #8eb8a0;
+  --color-accent3: #7fa8c9;
+  --color-body: #e8e6df;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-display: "Fraunces", serif;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

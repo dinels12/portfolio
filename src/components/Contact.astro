@@ -1,0 +1,55 @@
+---
+const links = [
+  {
+    label: "dinels12@gmail.com",
+    href: "mailto:dinels12@gmail.com",
+    iconBg: "bg-accent/10",
+    iconColor: "#c9a96e",
+    icon: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>`,
+  },
+  {
+    label: "linkedin.com/in/dinels",
+    href: "https://linkedin.com/in/dinels",
+    external: true,
+    iconBg: "bg-accent3/10",
+    iconColor: "#7fa8c9",
+    icon: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>`,
+    iconFill: true,
+  },
+  {
+    label: "Buenos Aires, Argentina",
+    href: "#",
+    iconBg: "bg-accent2/10",
+    iconColor: "#8eb8a0",
+    icon: `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`,
+  },
+];
+---
+
+<section id="contact" class="py-24 pb-32">
+  <div class="max-w-3xl mx-auto px-8">
+
+    <div class="flex items-center gap-3 mb-3">
+      <span class="font-mono text-xs text-accent uppercase tracking-widest">Let's talk</span>
+      <span class="flex-1 h-px bg-border"></span>
+    </div>
+    <h2 class="font-display font-semibold text-3xl tracking-tighter text-body mb-10">Contact</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {links.map(link => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          class="fade-in flex items-center gap-3 bg-bg2 border border-border rounded-xl px-4 py-3.5 text-body text-sm font-medium no-underline hover:border-white/15 hover:bg-bg3 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${link.iconBg}`}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill={link.iconFill ? link.iconColor : "none"} stroke={link.iconFill ? "none" : link.iconColor} stroke-width="2" set:html={link.icon} />
+          </div>
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>
