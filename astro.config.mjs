@@ -30,19 +30,25 @@ export default defineConfig({
         provider: fontProviders.fontsource(),
         name: "Instrument Sans",
         cssVariable: "--font-sans",
-        weights: [400, 500, 600, 700, "italic"],
+        weights: [400, 500, 600], // solo estos dos usás en el CSS
+        styles: ["normal"],
+        subsets: ["latin"],
       },
       {
         provider: fontProviders.fontsource(),
         name: "Lora",
         cssVariable: "--font-display",
-        weights: [400, 500, 600, 700, "italic"],
+        weights: [400, 600, 700], // sacá el 500 y el italic si no lo usás explícitamente
+        styles: ["normal"],
+        subsets: ["latin"],
       },
       {
         provider: fontProviders.fontsource(),
         name: "JetBrains Mono",
         cssVariable: "--font-mono",
-        weights: [100, 200, 300, 400, 500, 600, 700, 800, "italic"],
+        weights: [400, 500, 600], // sacá el 700 y el italic si no los usás
+        styles: ["normal"],
+        subsets: ["latin"],
       },
     ],
   },
