@@ -31,8 +31,8 @@ My experience includes working with modern JavaScript ecosystems and cloud techn
 
 One of my main projects includes developing a meditation platform with:
 
-- **16,000+ registered users**
-- **1,300 daily active users**
+- **45,000+ registered users**
+- **5,000 daily active users**
 - **Mobile apps for iOS and Android**
 - **Full backend and cloud infrastructure**
 

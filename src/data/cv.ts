@@ -21,7 +21,7 @@ export const experience = [
     period: "Oct 2024 – Present",
     current: true,
     bullets: [
-      "Lead engineer building a meditation platform with <strong>16k registered users</strong> and <strong>1,300 daily active users</strong>.",
+      "Lead engineer building a meditation platform with <strong>45k registered users</strong> and <strong>5,000 daily active users</strong>.",
       "Architected backend APIs, mobile app, web platform, and cloud infrastructure end-to-end.",
       "Built React Native mobile app with <strong>offline-first architecture</strong> and audio streaming.",
       "Designed NestJS + GraphQL backend with 90+ endpoints.",

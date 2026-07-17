@@ -51,7 +51,7 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 | Stat | Label |
 | --- | --- |
 | 5+ | Years experience |
-| 16k+ | Users on Aloharmony |
+| 45k+ | Users on Aloharmony |
 | 4 | Products shipped end-to-end |
 | 0→1 | How I like to build |
 
@@ -73,7 +73,7 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 **Highlights:**
 
-- Scaled platform to 16,000+ registered users and 1,300 daily active users
+- Scaled platform to 45,000+ registered users and 5,000 daily active users
 - Built React Native mobile app with offline-first architecture and real-time audio streaming
 - Designed NestJS + GraphQL backend with 90+ endpoints from scratch
 - Cut landing load time from ~3s to ~200ms with Next.js SSR and CloudFront CDN
@@ -83,7 +83,7 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 **CV-style bullets (also present):**
 
-- Lead engineer building a meditation platform with **16k registered users** and **1,300 daily active users**
+- Lead engineer building a meditation platform with **45k registered users** and **5,000 daily active users**
 - Architected backend APIs, mobile app, web platform, and cloud infrastructure end-to-end
 - Built React Native mobile app with **offline-first architecture** and audio streaming
 - Designed NestJS + GraphQL backend with 90+ endpoints
@@ -161,7 +161,7 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 ### Aloharmony — Meditation Platform (Featured)
 
-**Description:** Built the full product from scratch as CTO/Lead Engineer — React Native mobile app with offline-first architecture, NestJS + GraphQL backend (90+ endpoints), Next.js web platform, and complete AWS infrastructure. Scaled to 16k+ registered users and 1,300 daily active users.
+**Description:** Built the full product from scratch as CTO/Lead Engineer — React Native mobile app with offline-first architecture, NestJS + GraphQL backend (90+ endpoints), Next.js web platform, and complete AWS infrastructure. Scaled to 45k+ registered users and 5k daily active users.
 
 **Metrics shown on the project card:**
 
@@ -170,8 +170,6 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 | 45k+ | Users |
 | 5k | DAU |
 | 33k ARR | Revenue |
-
-> Note: Metrics on the featured project card (45k+ users / 5k DAU) differ from the hero and experience copy (16k+ users / 1,300 DAU). Both appear in the site content as written.
 
 **Tags:** React Native, Next.js, NestJS, GraphQL, AWS, Stripe
 
@@ -375,7 +373,7 @@ The results were immediate and measurable:
 
 I want to be clear: microservices are the right choice — at the right scale. If you have multiple teams that need to deploy independently, if you have services with genuinely different scaling characteristics, if you're running at a scale where a single deployment pipeline becomes a bottleneck — then distributed architecture pays off.
 
-At 16k users with a team of one, we were not at that scale.
+At 16k users with a team of one, we were not at that scale. *(Historical: scale at time of migration decision; current platform is 45k+ users / 5k DAU.)*
 
 #### The lesson
 
@@ -513,18 +511,6 @@ The conversion rate improvement was material. Faster landing pages convert bette
 Most performance problems are boring. They're not algorithmic complexity issues or clever optimization challenges. They're: missing CDN, unoptimized images, client-side rendering where static rendering would work, and no caching headers.
 
 Start with the boring stuff first. It's almost always the boring stuff.
-
----
-
-## Content inconsistencies to be aware of
-
-These appear as different numbers in different parts of the portfolio content:
-
-| Topic | Sources & values |
-| --- | --- |
-| Aloharmony users | Hero / experience / blog: **16k+** registered · Projects card metrics: **45k+** users |
-| Aloharmony DAU | Experience: **1,300** DAU · Projects card metrics: **5k** DAU |
-| Aloharmony revenue | Only on Projects card: **33k ARR** |
 
 ---
 
