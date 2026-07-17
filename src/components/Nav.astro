@@ -1,10 +1,12 @@
 ---
+import { personal } from "../data/cv";
+
 const links = [
-  { href: "/",          label: "Home"       },
-  { href: "/#work",     label: "Work"       },
+  { href: "/", label: "Home" },
+  { href: "/#work", label: "Work" },
   { href: "/#experience", label: "Experience" },
-  { href: "/blog",      label: "Blog"       },
-  { href: "/#contact",  label: "Contact"    },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -30,10 +32,18 @@ const currentPath = Astro.url.pathname;
           {l.label}
         </a>
       ))}
+      <a
+        href={personal.desitiondev}
+        target="_blank"
+        rel="me noopener noreferrer"
+        class="px-3 py-1.5 rounded-md text-sm font-medium text-muted hover:text-ink hover:bg-surface2 transition-colors duration-150 no-underline"
+      >
+        DesitionDev
+      </a>
     </nav>
 
     <a
-      href="mailto:daniels@desitiondev.com"
+      href={`mailto:${personal.email}`}
       class="hidden md:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-accent text-white text-sm font-semibold no-underline hover:bg-accent2 transition-colors duration-150"
     >
       Get in touch
@@ -60,7 +70,15 @@ const currentPath = Astro.url.pathname;
         {l.label}
       </a>
     ))}
-    <a href="mailto:daniels@desitiondev.com" class="mt-2 px-3 py-2 rounded-md text-sm font-semibold text-accent no-underline">
+    <a
+      href={personal.desitiondev}
+      target="_blank"
+      rel="me noopener noreferrer"
+      class="px-3 py-2 rounded-md text-sm font-medium text-muted hover:text-ink hover:bg-surface2 no-underline transition-colors"
+    >
+      DesitionDev
+    </a>
+    <a href={`mailto:${personal.email}`} class="mt-2 px-3 py-2 rounded-md text-sm font-semibold text-accent no-underline">
       Get in touch →
     </a>
   </div>

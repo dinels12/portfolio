@@ -1,24 +1,40 @@
 ---
 import { Font } from "astro:assets";
+import { personal } from "../data/cv";
+
 interface Props {
   title?: string;
   description?: string;
 }
 const {
   title = "Daniel Suarez — Senior Full-Stack Engineer",
-  description = "Senior Full-Stack Engineer specializing in React, React Native, Node.js and AWS. Building scalable web and mobile products.",
+  description = "Senior Full-Stack Engineer specializing in React, React Native, Node.js and AWS. Building scalable web and mobile products. Founder of DesitionDev.",
 } = Astro.props;
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: personal.name,
+  url: personal.siteUrl,
+  email: personal.email,
+  jobTitle: personal.jobTitle,
+  worksFor: {
+    "@type": "Organization",
+    name: "Desition Labs",
+    alternateName: "DesitionDev",
+    url: "https://desitiondev.com",
+  },
+  sameAs: [
+    "https://desitiondev.com",
+    personal.github,
+    personal.linkedin,
+  ],
+};
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -37,6 +53,9 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/og-image.png" />
 
+    <!-- Person JSON-LD (entity graph with DesitionDev / sameAs) -->
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+
     <Font cssVariable="--font-sans" preload />
     <Font cssVariable="--font-display" preload />
     <Font cssVariable="--font-mono" preload />
@@ -50,5 +69,6 @@ const {
       );
       document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     </script>
-  </body></html
->
+  </body>
+</html>
+

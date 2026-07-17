@@ -1,5 +1,5 @@
 ---
-
+import { personal } from "../data/cv";
 ---
 
 <section class="pt-32 pb-24">
@@ -20,11 +20,35 @@
       </h1>
 
       <!-- Description -->
-      <p class="text-lg text-ink2 leading-relaxed mb-10 max-w-xl">
+      <p class="text-lg text-ink2 leading-relaxed mb-6 max-w-xl">
         I'm a software engineer based in <strong class="text-ink font-semibold">Buenos Aires</strong> with 6 years building
         web and mobile products from the ground up. Currently serving as
         <strong class="text-ink font-semibold">CTO at Aloharmony</strong>, where I architected and shipped a meditation
         platform used by thousands of people daily — solo, across the full stack.
+      </p>
+
+      <!-- Studio blurb (entity + first-party link to product hub) -->
+      <p class="text-base text-ink2 leading-relaxed mb-10 max-w-xl">
+        I also build my own products under
+        <a
+          href={personal.desitiondev}
+          target="_blank"
+          rel="me noopener noreferrer"
+          class="text-ink font-semibold no-underline hover:text-accent transition-colors"
+        >DesitionDev</a
+        >
+        — the public home of apps from DesitionLabs.
+        <a
+          href={personal.desitiondev}
+          target="_blank"
+          rel="me noopener noreferrer"
+          class="inline-flex items-center gap-1 text-accent font-medium no-underline hover:text-accent2 transition-colors ml-1"
+        >
+          desitiondev.com
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+          >
+        </a>
       </p>
 
       <!-- CTAs -->
@@ -39,7 +63,7 @@
           >
         </a>
         <a
-          href="mailto:daniels@desitiondev.com"
+          href={`mailto:${personal.email}`}
           class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border rounded-lg text-sm font-semibold text-ink no-underline hover:border-border2 transition-colors duration-150"
         >
           Get in touch

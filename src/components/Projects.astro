@@ -1,4 +1,6 @@
 ---
+import { personal } from "../data/cv";
+
 // To add your project screenshots:
 // 1. Drop images into /public/projects/
 // 2. Set image: "/projects/your-file.png" below
@@ -25,6 +27,21 @@ const projects = [
       { label: "iOS", href: "https://apps.apple.com/us/app/aloharmony/id1597463081" },
     ],
     featured: true,
+  },
+  {
+    title: "DesitionDev",
+    subtitle: "Studio · Own products",
+    description:
+      "Independent product hub — apps built by DesitionLabs. My own products live here, not as client work. Explore the public product catalog and labs.",
+    image: null,
+    placeholderGradient: "from-sky-50 to-blue-100",
+    tags: ["DesitionLabs", "Product", "Studio"],
+    metrics: [],
+    links: [
+      { label: "Hub", href: personal.desitiondev },
+      { label: "Products", href: personal.desitiondevProducts },
+    ],
+    featured: false,
   },
   {
     title: "Subliful",
@@ -64,7 +81,7 @@ const projects = [
         <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">Selected Work</p>
         <h2 class="font-display text-4xl font-bold tracking-tight text-ink">Projects</h2>
       </div>
-      <a href="https://github.com/dinels12" target="_blank" rel="noopener noreferrer"
+      <a href={personal.github} target="_blank" rel="me noopener noreferrer"
         class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-ink no-underline transition-colors">
         View all on GitHub
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

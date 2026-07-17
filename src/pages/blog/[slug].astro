@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
 import Base from "../../layouts/Base.astro";
+import { personal } from "../../data/cv";
 import "../../styles/global.css";
 
 export async function getStaticPaths() {
@@ -73,15 +74,22 @@ const { title, excerpt, date, tag, readTime } = post.data;
           DS
         </div>
         <div>
-          <div class="font-semibold text-sm text-ink">Daniel Suarez</div>
-          <div class="text-xs text-muted mt-0.5 mb-3">Senior Full-Stack Engineer · Buenos Aires</div>
+          <div class="font-semibold text-sm text-ink">{personal.name}</div>
+          <div class="text-xs text-muted mt-0.5 mb-3">Founder of DesitionDev · {personal.location}</div>
           <div class="flex gap-3">
             <a
-              href="https://linkedin.com/in/dinels"
+              href={personal.linkedin}
               target="_blank"
+              rel="me noopener noreferrer"
               class="text-xs text-accent no-underline hover:text-accent2">LinkedIn</a
             >
-            <a href="mailto:daniels@desitiondev.com" class="text-xs text-accent no-underline hover:text-accent2">Email</a>
+            <a
+              href={personal.desitiondev}
+              target="_blank"
+              rel="me noopener noreferrer"
+              class="text-xs text-accent no-underline hover:text-accent2">DesitionDev</a
+            >
+            <a href={`mailto:${personal.email}`} class="text-xs text-accent no-underline hover:text-accent2">Email</a>
           </div>
         </div>
       </div>

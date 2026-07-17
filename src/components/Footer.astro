@@ -1,28 +1,75 @@
 ---
+import { personal } from "../data/cv";
+
 const year = new Date().getFullYear();
+
+const links = [
+  {
+    label: "DesitionDev",
+    href: personal.desitiondev,
+    rel: "me noopener noreferrer",
+    external: true,
+  },
+  {
+    label: "Products",
+    href: personal.desitiondevProducts,
+    rel: "noopener noreferrer",
+    external: true,
+  },
+  {
+    label: "Labs",
+    href: personal.desitiondevLabs,
+    rel: "noopener noreferrer",
+    external: true,
+    quiet: true,
+  },
+  {
+    label: "GitHub",
+    href: personal.github,
+    rel: "me noopener noreferrer",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    href: personal.linkedin,
+    rel: "me noopener noreferrer",
+    external: true,
+  },
+  {
+    label: "Email",
+    href: `mailto:${personal.email}`,
+    rel: undefined,
+    external: false,
+  },
+];
 ---
 
-<footer class="border-t border-border bg-canvas py-8">
-  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <span class="font-display text-sm text-muted">© {year} Daniel Suarez</span>
-    <div class="flex items-center gap-5">
-      <a
-        href="https://github.com/dinels12"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-muted hover:text-ink transition-colors no-underline text-sm font-medium">GitHub</a
-      >
-      <a
-        href="https://linkedin.com/in/dinels"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-muted hover:text-ink transition-colors no-underline text-sm font-medium">LinkedIn</a
-      >
-      <a
-        href="mailto:daniels@desitiondev.com"
-        class="text-muted hover:text-ink transition-colors no-underline text-sm font-medium">Email</a
-      >
+<footer class="border-t border-border bg-canvas py-10">
+  <div class="max-w-5xl mx-auto px-6 flex flex-col gap-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex flex-col items-center sm:items-start gap-1">
+        <span class="font-display text-sm text-muted">© {year} Daniel Suarez</span>
+        <span class="text-xs text-muted/70">Founder of DesitionDev · Built by DesitionLabs</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+        {links.map((l) => (
+          <a
+            href={l.href}
+            target={l.external ? "_blank" : undefined}
+            rel={l.rel}
+            class={`transition-colors no-underline text-sm font-medium ${
+              l.quiet
+                ? "text-muted/60 hover:text-muted"
+                : "text-muted hover:text-ink"
+            }`}
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
     </div>
-    <span class="font-mono text-xs text-muted/60">Built with Astro + Tailwind</span>
+    <div class="flex justify-center sm:justify-end">
+      <span class="font-mono text-xs text-muted/60">Built with Astro + Tailwind</span>
+    </div>
   </div>
 </footer>
