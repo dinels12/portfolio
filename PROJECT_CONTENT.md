@@ -6,21 +6,21 @@ A complete extraction of all information presented in this portfolio (personal p
 
 ## Personal profile
 
-| Field | Value |
-| --- | --- |
-| **Name** | Daniel Suarez |
-| **Title** | Senior Full-Stack Engineer |
-| **Tagline** | Building products people actually use. |
-| **Location** | Buenos Aires, Argentina |
-| **Timezone** | UTC-3 |
-| **Email** | dinels12@gmail.com |
-| **LinkedIn** | https://linkedin.com/in/dinels |
-| **GitHub** | https://github.com/dinels12 |
-| **Availability** | Available for remote roles / open to remote |
+| Field            | Value                                          |
+| ---------------- | ---------------------------------------------- |
+| **Name**         | Daniel Suarez                                  |
+| **Title**        | Senior Full-Stack Engineer                     |
+| **Tagline**      | Building products people actually use.         |
+| **Location**     | Buenos Aires, Argentina                        |
+| **Timezone**     | UTC-3                                          |
+| **Email**        | daniels@desitiondev.com                             |
+| **LinkedIn**     | https://linkedin.com/in/dinels                 |
+| **GitHub**       | https://github.com/dinels12                    |
+| **Availability** | Open for consulting and select project work (not seeking full-time / not active job search) |
 
 ### Summary
 
-5+ years designing and shipping scalable web and mobile products. From mobile apps and backend APIs to cloud infrastructure — works across the entire stack.
+6 years designing and shipping scalable web and mobile products. From mobile apps and backend APIs to cloud infrastructure — works across the entire stack. Open for consulting and select project work; not currently seeking full-time roles.
 
 ### Site / SEO description
 
@@ -40,20 +40,20 @@ Writing about full-stack engineering, React, Node.js, cloud architecture, and le
 
 **Body copy:**
 
-I'm a software engineer based in **Buenos Aires** with 5+ years building web and mobile products from the ground up. Currently serving as **CTO at Aloharmony**, where I architected and shipped a meditation platform used by thousands of people daily — solo, across the full stack.
+I'm a software engineer based in **Buenos Aires** with 6 years building web and mobile products from the ground up. Currently serving as **CTO at Aloharmony**, where I architected and shipped a meditation platform used by thousands of people daily — solo, across the full stack.
 
-**Status:** Available for remote roles
+**Status:** Open for consulting
 
-**CTAs:** See my work · Get in touch · Hire me
+**CTAs:** See my work · Get in touch
 
 ### Quick stats (homepage)
 
-| Stat | Label |
-| --- | --- |
-| 5+ | Years experience |
-| 45k+ | Users on Aloharmony |
-| 4 | Products shipped end-to-end |
-| 0→1 | How I like to build |
+| Stat | Label                       |
+| ---- | --------------------------- |
+| 6    | Years experience            |
+| 45k+ | Users on Aloharmony         |
+| 4    | Products shipped end-to-end |
+| 0→1  | How I like to build         |
 
 ---
 
@@ -61,13 +61,13 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 ### 1. Sr. Software Engineer / CTO — Aloharmony
 
-| Field | Value |
-| --- | --- |
-| **Company** | Aloharmony |
-| **URL** | https://aloharmony.com |
-| **Location** | USA · Remote |
-| **Period** | Oct 2024 – Present |
-| **Current** | Yes |
+| Field        | Value                  |
+| ------------ | ---------------------- |
+| **Company**  | Aloharmony             |
+| **URL**      | https://aloharmony.com |
+| **Location** | USA · Remote           |
+| **Period**   | Oct 2024 – Present     |
+| **Current**  | Yes                    |
 
 **Description:** Lead engineer and technical decision-maker for a meditation platform. Responsible for the full product ecosystem — mobile app, backend APIs, web platform, and cloud infrastructure.
 
@@ -98,12 +98,12 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 ### 2. Technical Leader — CRIZZ
 
-| Field | Value |
-| --- | --- |
-| **Company** | CRIZZ |
-| **Location** | Colombia · Remote |
-| **Period** | Jun 2022 – Dec 2023 |
-| **Current** | No |
+| Field        | Value               |
+| ------------ | ------------------- |
+| **Company**  | CRIZZ               |
+| **Location** | Colombia · Remote   |
+| **Period**   | Jun 2022 – Dec 2023 |
+| **Current**  | No                  |
 
 **Description:** Led a 5-engineer team across four simultaneous products, owning architecture decisions, code quality, technical roadmap, and direct collaboration with stakeholders.
 
@@ -130,12 +130,12 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 ### 3. Full Stack Developer — Thought Media
 
-| Field | Value |
-| --- | --- |
-| **Company** | Thought Media |
-| **Location** | USA · Remote |
-| **Period** | Jan 2021 – Jan 2022 |
-| **Current** | No |
+| Field        | Value               |
+| ------------ | ------------------- |
+| **Company**  | Thought Media       |
+| **Location** | USA · Remote        |
+| **Period**   | Jan 2021 – Jan 2022 |
+| **Current**  | No                  |
 
 **Description:** Delivered full-stack features across multiple client projects, from e-commerce platforms to mobile applications.
 
@@ -165,10 +165,10 @@ I'm a software engineer based in **Buenos Aires** with 5+ years building web and
 
 **Metrics shown on the project card:**
 
-| Value | Label |
-| --- | --- |
-| 45k+ | Users |
-| 5k | DAU |
+| Value   | Label   |
+| ------- | ------- |
+| 45k+    | Users   |
+| 5k      | DAU     |
 | 33k ARR | Revenue |
 
 **Tags:** React Native, Next.js, NestJS, GraphQL, AWS, Stripe
@@ -264,18 +264,18 @@ Discord APIs, Facebook integrations
 
 ## Education
 
-| Name | Organization | Period |
-| --- | --- | --- |
-| Introduction to Computer Science (CS50) | HarvardX | Completed |
+| Name                                    | Organization | Period    |
+| --------------------------------------- | ------------ | --------- |
+| Introduction to Computer Science (CS50) | HarvardX     | Completed |
 
 ---
 
 ## Languages
 
-| Language | Level |
-| --- | --- |
-| Spanish | Native |
-| English | Advanced |
+| Language | Level    |
+| -------- | -------- |
+| Spanish  | Native   |
+| English  | Advanced |
 
 ---
 
@@ -285,15 +285,15 @@ Discord APIs, Facebook integrations
 
 **Body copy:**
 
-Whether you're hiring, building something new, or just want to talk engineering — I'm always up for a good conversation. Reach out and let's see if there's a fit.
+I'm open for consulting and select project work — architecture, full-stack delivery, or technical leadership. Not currently looking for full-time roles. If you have something interesting, reach out and let's talk.
 
 **Contact details:**
 
-- Email: dinels12@gmail.com
+- Email: daniels@desitiondev.com
 - LinkedIn: https://linkedin.com/in/dinels
 - Location: Buenos Aires, Argentina
 - Timezone: UTC-3
-- Status: Open to remote
+- Status: Open for consulting
 
 **Footer:** © {current year} Daniel Suarez · GitHub · LinkedIn · Email
 
@@ -306,7 +306,7 @@ Whether you're hiring, building something new, or just want to talk engineering 
 - Experience
 - Blog
 - Contact
-- Hire me (mailto)
+- Get in touch (mailto)
 
 ---
 
@@ -318,12 +318,12 @@ There are **3** published posts.
 
 ## 1. Why We Migrated from GraphQL Federation to a Monolith
 
-| Field | Value |
-| --- | --- |
-| **Date** | January 15, 2025 |
-| **Tag** | Architecture |
-| **Read time** | 6 min read |
-| **Slug** | graphql-federation-to-monolith |
+| Field         | Value                          |
+| ------------- | ------------------------------ |
+| **Date**      | January 15, 2025               |
+| **Tag**       | Architecture                   |
+| **Read time** | 6 min read                     |
+| **Slug**      | graphql-federation-to-monolith |
 
 **Excerpt:** We had microservices. They were slowing us down. Here's the honest story of why we went back to a monolith — and why it was the right call at our stage.
 
@@ -373,7 +373,7 @@ The results were immediate and measurable:
 
 I want to be clear: microservices are the right choice — at the right scale. If you have multiple teams that need to deploy independently, if you have services with genuinely different scaling characteristics, if you're running at a scale where a single deployment pipeline becomes a bottleneck — then distributed architecture pays off.
 
-At 16k users with a team of one, we were not at that scale. *(Historical: scale at time of migration decision; current platform is 45k+ users / 5k DAU.)*
+At 16k users with a team of one, we were not at that scale. _(Historical: scale at time of migration decision; current platform is 45k+ users / 5k DAU.)_
 
 #### The lesson
 
@@ -385,12 +385,12 @@ We kept the GraphQL API clean, the module boundaries clear, and the database sch
 
 ## 2. Building an Offline-First React Native App: What I Learned
 
-| Field | Value |
-| --- | --- |
-| **Date** | February 20, 2025 |
-| **Tag** | React Native |
-| **Read time** | 8 min read |
-| **Slug** | offline-first-react-native |
+| Field         | Value                      |
+| ------------- | -------------------------- |
+| **Date**      | February 20, 2025          |
+| **Tag**       | React Native               |
+| **Read time** | 8 min read                 |
+| **Slug**      | offline-first-react-native |
 
 **Excerpt:** Audio streaming, unreliable connections, and thousands of users. Here's the architecture that made Aloharmony's mobile app work anywhere.
 
@@ -447,12 +447,12 @@ Building mobile apps that work without a network is harder than building ones th
 
 ## 3. From 3 Seconds to 200ms: How We Fixed the Landing Page
 
-| Field | Value |
-| --- | --- |
-| **Date** | March 5, 2025 |
-| **Tag** | Performance |
-| **Read time** | 5 min read |
-| **Slug** | landing-page-performance |
+| Field         | Value                    |
+| ------------- | ------------------------ |
+| **Date**      | March 5, 2025            |
+| **Tag**       | Performance              |
+| **Read time** | 5 min read               |
+| **Slug**      | landing-page-performance |
 
 **Excerpt:** A slow landing page was killing conversions. Here's the full breakdown of what was wrong and exactly how we fixed it.
 
@@ -497,12 +497,12 @@ The key configuration decision was cache TTLs:
 
 #### Measuring the impact
 
-| Metric | Before | After |
-| --- | --- | --- |
-| LCP | ~3.2s | ~0.8s |
-| FCP | ~2.8s | ~0.4s |
-| TTI | ~4.1s | ~1.2s |
-| Load (3G) | ~8s | ~2.1s |
+| Metric    | Before | After |
+| --------- | ------ | ----- |
+| LCP       | ~3.2s  | ~0.8s |
+| FCP       | ~2.8s  | ~0.4s |
+| TTI       | ~4.1s  | ~1.2s |
+| Load (3G) | ~8s    | ~2.1s |
 
 The conversion rate improvement was material. Faster landing pages convert better — this is well-established — but it's still satisfying to see it happen in your own numbers.
 
@@ -530,4 +530,4 @@ Start with the boring stuff first. It's almost always the boring stuff.
 - https://apps.apple.com/us/app/aloharmony/id1597463081
 - https://linkedin.com/in/dinels
 - https://github.com/dinels12
-- mailto:dinels12@gmail.com
+- mailto:daniels@desitiondev.com

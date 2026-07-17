@@ -14,7 +14,7 @@ Portfolio: (add your deployed URL here)
 
 ## About Me
 
-I am a Full-Stack Software Engineer with 5+ years of experience designing and building production systems used by thousands of users.
+I am a Full-Stack Software Engineer with 6 years of experience designing and building production systems used by thousands of users. Open for consulting and select project work.
 
 I specialize in developing complete product ecosystems including:
 
@@ -163,7 +163,7 @@ LinkedIn
 https://linkedin.com/in/dinels
 
 Email  
-dinels12@gmail.com
+daniels@desitiondev.com
 
 ---
 

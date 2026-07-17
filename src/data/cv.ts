@@ -6,11 +6,12 @@ export const personal = {
   title: "Senior Full-Stack Engineer",
   tagline: "Building products people actually use.",
   summary:
-    "5+ years designing and shipping scalable web and mobile products. From mobile apps and backend APIs to cloud infrastructure — I work across the entire stack.",
+    "6 years designing and shipping scalable web and mobile products. From mobile apps and backend APIs to cloud infrastructure — I work across the entire stack. Open for consulting and select project work; not currently seeking full-time roles.",
   location: "Buenos Aires, Argentina",
-  email: "dinels12@gmail.com",
+  email: "daniels@desitiondev.com",
   linkedin: "https://linkedin.com/in/dinels",
-  available: true,
+  available: false,
+  openFor: "consulting",
 };
 
 export const experience = [
