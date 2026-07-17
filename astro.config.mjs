@@ -9,7 +9,7 @@ import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://portfolio-daniel-suarez.netlify.app",
+  site: "https://portfolio.desitiondev.com",
   // site: "https://danielsuarez.com",
   //   base: "/",
   content: {
