@@ -5,11 +5,14 @@ import compress from "@playform/compress";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // const isProd = import.meta.env.PROD;
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://daniel-suarez.desitiondev.com",
+
   // site: "https://danielsuarez.com",
   //   base: "/",
   content: {
@@ -19,11 +22,13 @@ export default defineConfig({
       },
     },
   },
+
   markdown: {
     shikiConfig: {
       theme: "github-dark",
     },
   },
+
   experimental: {
     fonts: [
       {
@@ -52,11 +57,15 @@ export default defineConfig({
       },
     ],
   },
+
   build: {
     format: "file",
     inlineStylesheets: "always",
   },
-  trailingSlash: "ignore", // keeps /offer1 without forcing /offer1/,
+
+  // keeps /offer1 without forcing /offer1/,
+  trailingSlash: "ignore",
+
   vite: {
     plugins: [
       // @ts-expect-error
@@ -81,4 +90,6 @@ export default defineConfig({
     mdx(),
     sitemap(),
   ],
+
+  adapter: cloudflare()
 });
