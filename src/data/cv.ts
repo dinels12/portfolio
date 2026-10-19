@@ -3,11 +3,11 @@
 
 export const personal = {
   name: "Daniel Suarez",
-  title: "Senior Full-Stack Engineer",
-  jobTitle: "Founder & Full-Stack Engineer",
-  tagline: "Building products people actually use.",
+  title: "CTO / Sr. Software Engineer",
+  jobTitle: "CTO / Sr. Software Engineer",
+  tagline: "I know what to ask AI — and how — to ship products people actually use.",
   summary:
-    "6 years designing and shipping scalable web and mobile products. From mobile apps and backend APIs to cloud infrastructure — I work across the entire stack. Open for consulting and select project work; not currently seeking full-time roles.",
+    "CTO / Sr. Software Engineer at Aloharmony, a therapeutic-music wellness app with ~52k users on iOS, Android and web. 6 years shipping web and mobile products across the full stack. My edge: broad, hands-on knowledge that lets me know what to ask AI and how — so I can direct a team of AI agents with real engineering judgment.",
   location: "Buenos Aires, Argentina",
   timezone: "UTC-3",
   email: "info@desitiondev.com",
@@ -104,4 +104,118 @@ export const education = [
 export const languages = [
   { name: "Spanish", level: "Native" },
   { name: "English", level: "Advanced" },
+];
+
+// Aloharmony impact 2024–2026 (results, not tasks). No financials here by design.
+export const aloharmony = {
+  name: "Aloharmony",
+  url: "https://aloharmony.com",
+  description:
+    "Wellness app with therapeutic music, ~52k users across iOS, Android and web.",
+  users: "~52k",
+  platforms: ["iOS", "Android", "Web"],
+};
+
+export const achievements = [
+  {
+    title: "Store-compliant monetization",
+    result:
+      "Split purchase flows between the new web app and a store-compliant payment gateway, so users can buy where it suits them without breaking App Store / Google Play rules.",
+    tags: ["Payments", "RevenueCat", "Compliance"],
+  },
+  {
+    title: "Free trial, cross-platform",
+    result:
+      "Launched the free-trial experience end-to-end, giving new users a frictionless way to try the product before subscribing.",
+    tags: ["RevenueCat", "Growth"],
+  },
+  {
+    title: "New web app, end-to-end",
+    result:
+      "Designed and shipped the new web app from architecture to production — a first-class platform alongside the mobile apps.",
+    tags: ["Web", "Full-stack"],
+  },
+  {
+    title: "Microservices → monolith",
+    result:
+      "Migrated a GraphQL-federation microservices backend to an optimized monolith: fewer moving parts, lower latency and faster delivery.",
+    tags: ["Architecture", "Backend"],
+  },
+  {
+    title: "App v4 & v5 + visual redesign",
+    result:
+      "Shipped two major app versions and led the visual redesign of the web, landing, account area and blog under one design system.",
+    tags: ["Mobile", "Design system"],
+  },
+  {
+    title: "Partner integrations",
+    result:
+      "Built partner integrations that open new distribution channels for the product.",
+    tags: ["Integrations", "APIs"],
+  },
+  {
+    title: "SEO & GEO",
+    result:
+      "Made the platform discoverable by search engines and AI answer engines: structured data, performance and content built to be cited.",
+    tags: ["SEO", "GEO"],
+  },
+  {
+    title: "In-house API & CRM",
+    result:
+      "Built a new in-house API and CRM, giving the team direct control over users, content and operations.",
+    tags: ["Backend", "Internal tools"],
+  },
+  {
+    title: "Data & content platform",
+    result:
+      "Set up Metabase analytics, an events system on Kafka and content management, so product decisions are backed by data.",
+    tags: ["Metabase", "Kafka", "Events"],
+  },
+  {
+    title: "AI image generation on-brand",
+    result:
+      "Built AI image generation grounded in the design system, producing on-brand visuals for content at scale.",
+    tags: ["Generative AI", "Design system"],
+  },
+];
+
+// AI agent team — general working method for the whole platform.
+export const aiMethod = {
+  headline: "Knowing what to ask AI — and how.",
+  intro:
+    "I run Aloharmony's platform with a team of ~10 AI agents working 24/7. The value isn't the agents; it's the judgment directing them. Broad, hands-on knowledge across product, code, infrastructure, data and growth lets me know what to ask, how to ask it, and when an answer is wrong.",
+  roles: ["Development", "QA", "Project management", "Product ownership", "UX", "Marketing", "Support", "Finance"],
+  governance: [
+    { title: "Human approval", text: "Nothing is published, spent or deleted without my explicit sign-off." },
+    { title: "Mandatory QA with evidence", text: "Every change is verified and backed by evidence before it ships." },
+    { title: "Security review", text: "Sensitive changes go through a dedicated security review." },
+    { title: "Automated tests", text: "Test suites gate every release." },
+  ],
+};
+
+export const faq = [
+  {
+    q: "Who is Daniel Suarez?",
+    a: "Daniel Suarez is a CTO / Sr. Software Engineer based in Buenos Aires, Argentina. He leads technology at Aloharmony, a wellness app with therapeutic music used by ~52k people on iOS, Android and web, and founded the DesitionDev product studio.",
+  },
+  {
+    q: "What makes Daniel Suarez different as an engineer?",
+    a: "His value is knowing what to ask AI and how. Broad, hands-on knowledge across mobile, web, backend, cloud, data, payments and growth lets him direct a team of AI agents with judgment — and catch when the output is wrong.",
+  },
+  {
+    q: "How does Daniel Suarez work with AI agents?",
+    a: "He runs a team of ~10 AI agents — development, QA, project management, product ownership, UX, marketing, support and finance — working 24/7 under governance: human approval to publish, spend or delete; mandatory QA with evidence; security review; and automated tests.",
+  },
+  {
+    q: "What did Daniel Suarez achieve at Aloharmony between 2024 and 2026?",
+    a: "He split purchase flows between a new web app and a store-compliant payment gateway, launched a free trial with RevenueCat, built the new web app end-to-end, migrated microservices to a monolith, shipped app v4 and v5 with a visual redesign, added partner integrations, SEO/GEO, an in-house API and CRM, Metabase, an events system on Kafka, content management and on-brand AI image generation.",
+  },
+  {
+    q: "What is Daniel Suarez's tech stack?",
+    a: "React, Next.js, Astro, React Native and Expo on the front end; Node.js, NestJS, GraphQL and REST on the back end; AWS, Docker and Redis for infrastructure; Kafka and Metabase for events and analytics; Stripe and RevenueCat for payments.",
+  },
+  {
+    q: "Is Daniel Suarez available for work?",
+    a: "He is open for consulting and select project work — architecture, full-stack delivery, AI-assisted engineering and technical leadership. Contact: info@desitiondev.com.",
+  },
 ];

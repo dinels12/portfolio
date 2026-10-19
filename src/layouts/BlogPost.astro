@@ -8,10 +8,10 @@ import "../styles/global.css";
 const { frontmatter } = Astro.props;
 ---
 
-<Base title={`${frontmatter.title} — Daniel Suarez`} description={frontmatter.excerpt}>
+<Base title={`${frontmatter.title} — Daniel Suarez`} description={frontmatter.excerpt} ogType="article">
   <Nav />
 
-  <main class="pt-28 pb-24">
+  <main id="main" class="pt-28 pb-24">
     <div class="max-w-2xl mx-auto px-6">
 
       <!-- Back -->

@@ -1,0 +1,38 @@
+---
+import { aiMethod } from "../data/cv";
+---
+
+<section id="ai-method" class="py-24 bg-surface border-y border-border" aria-labelledby="ai-method-title">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">How I work</p>
+        <h2 id="ai-method-title" class="font-display text-4xl font-bold tracking-tight text-ink mb-5">
+          {aiMethod.headline}
+        </h2>
+        <p class="text-base text-ink2 leading-relaxed mb-6">{aiMethod.intro}</p>
+        <p class="text-sm font-semibold text-ink mb-3">One team, the whole platform:</p>
+        <ul class="flex flex-wrap gap-1.5" aria-label="AI agent roles">
+          {aiMethod.roles.map((r) => (
+            <li class="text-xs bg-surface2 text-ink2 border border-border px-2.5 py-1 rounded font-medium">{r}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-ink mb-4">Governed by design</p>
+        <ol class="flex flex-col gap-4">
+          {aiMethod.governance.map((g, i) => (
+            <li class="reveal flex gap-4 bg-canvas border border-border rounded-xl p-5">
+              <span class="font-mono text-sm font-semibold text-accent shrink-0" aria-hidden="true">0{i + 1}</span>
+              <div>
+                <h3 class="font-semibold text-base text-ink mb-1">{g.title}</h3>
+                <p class="text-sm text-ink2 leading-relaxed">{g.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
