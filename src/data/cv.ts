@@ -55,7 +55,7 @@ export const experience = [
   {
     role: "Full Stack Developer",
     company: "Thought Media",
-    location: "Argentina · Remote",
+    location: "USA",
     period: "Jan 2021 – Jan 2022",
     current: false,
     bullets: [

@@ -39,7 +39,7 @@ AI multiplies whoever directs it. Daniel's edge is not "using AI", it is knowing
 ## Previous experience
 
 - Technical Leader, CRIZZ (Colombia, remote), Jun 2022 – Dec 2023: led a team of 5 developers across Subliful, Adkiero, Yovoto and XProfit; defined stacks and architecture; set code review and sprint practices; mentored engineers.
-- Full Stack Developer, Thought Media (Argentina · Remote), Jan 2021 – Jan 2022: e-commerce with PayPal and Authorize.net; shipped the TaxMambo React Native app.
+- Full Stack Developer, Thought Media (USA, remote), Jan 2021 – Jan 2022: e-commerce with PayPal and Authorize.net; shipped the TaxMambo React Native app.
 
 ## Skills
 
