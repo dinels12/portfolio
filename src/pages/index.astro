@@ -1,7 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import Contact from "../components/Contact.astro";
+import AIMethod from "../components/AIMethod.astro";
 import Experience from "../components/Experience.astro";
+import FAQ from "../components/FAQ.astro";
+import Impact from "../components/Impact.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
@@ -20,11 +23,15 @@ const posts = await getCollection("blog");
 const latestPosts = posts.sort((a: any, b: any) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
-<Base>
+<Base pageType="ProfilePage">
   <Nav />
 
-  <main>
+  <main id="main">
     <Hero />
+
+    <Impact />
+
+    <AIMethod />
 
     <Projects />
 
@@ -85,6 +92,8 @@ const latestPosts = posts.sort((a: any, b: any) => new Date(b.data.date).getTime
     }
 
     <Experience />
+
+    <FAQ />
 
     <Contact />
   </main>

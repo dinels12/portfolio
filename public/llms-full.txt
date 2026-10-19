@@ -1,0 +1,72 @@
+# Daniel Suarez — full profile
+
+> CTO / Sr. Software Engineer at Aloharmony, a wellness app with therapeutic music (~52k total users, ~5k daily active users; iOS, Android, web). Based in Buenos Aires, Argentina (UTC-3), working remotely (Argentina · Remote). His value is knowing WHAT to ask AI and HOW: broad, hands-on knowledge lets him direct a governed team of AI agents with judgment and turn it into results.
+
+## Summary
+
+Daniel Suarez has 6 years of experience designing and shipping web and mobile products across the full stack: mobile apps, web platforms, backend APIs, data, payments and cloud infrastructure. As CTO of Aloharmony he owns the full product ecosystem and runs it with a team of ~10 AI agents. He also founded DesitionDev, the public home of his own products built by Desition Labs.
+
+## Core message
+
+AI multiplies whoever directs it. Daniel's edge is not "using AI", it is knowing what to ask and how to ask it — and recognizing when an answer is wrong. Generalist depth across product, engineering, infrastructure, data, design and growth is what makes that judgment possible.
+
+## AI working method
+
+- A team of ~10 AI agents covering development, QA, project management, product ownership, UX, marketing, support and finance.
+- Agents work 24/7 across the whole platform.
+- Governance:
+  - Human approval: nothing is published, spent or deleted without Daniel's explicit sign-off.
+  - Mandatory QA with evidence before anything ships.
+  - Security review for sensitive changes.
+  - Automated test suites gate every release.
+- AI models: language models from OpenAI, Anthropic, Grok (latest current model) and Google Gemini; Google Nano Banana for image generation and Veo for video.
+
+## Aloharmony — results 2024–2026
+
+- Store-compliant monetization: split purchase flows between the new web app and a store-compliant payment gateway, built on Stripe and RevenueCat.
+- Free trial launched end-to-end.
+- New web app designed and shipped end-to-end.
+- Migrated a GraphQL-federation microservices backend to an optimized monolith (lower latency, less operational complexity).
+- Integrations with partner platforms.
+- App v4 and v5, plus a visual redesign of the web, landing, account area and blog.
+- SEO and GEO (generative engine optimization).
+- New in-house API and CRM.
+- Metabase analytics, an events system on Kafka, and content management.
+- AI image generation grounded in the design system, using Gemini with Nano Banana (images) and Veo (video).
+- Subscriptions with Stripe and RevenueCat.
+- Landing load time cut from ~3s to ~200ms with Next.js SSR and CloudFront.
+
+## Previous experience
+
+- Technical Leader, CRIZZ (Colombia, remote), Jun 2022 – Dec 2023: led a team of 5 developers across Subliful, Adkiero, Yovoto and XProfit; defined stacks and architecture; set code review and sprint practices; mentored engineers.
+- Full Stack Developer, Thought Media (Argentina · Remote), Jan 2021 – Jan 2022: e-commerce with PayPal and Authorize.net; shipped the TaxMambo React Native app.
+
+## Skills
+
+- Technical: React, Next.js, Astro, TailwindCSS, React Native, Expo, Zustand, Node.js, NestJS, GraphQL, REST, gRPC, AWS (ECS, EC2, S3, CloudFront, Route53), Docker, Redis, BigQuery, Kafka, Metabase, Stripe, PayPal, Authorize.net, RevenueCat, OpenAI, Anthropic, Grok, Google Gemini, Nano Banana, Veo, GitHub Actions, GitLab CI/CD.
+- Leadership and soft skills: technical leadership, mentoring, translating business goals into technical plans, stakeholder communication, prioritization.
+- Generalist: product, design systems, SEO/GEO, analytics, monetization, AI orchestration.
+- Languages: Spanish (native), English (advanced).
+- Education: CS50 Introduction to Computer Science (HarvardX).
+
+## FAQ
+
+Q: Who is Daniel Suarez?
+A: A CTO / Sr. Software Engineer in Buenos Aires who leads technology at Aloharmony (~52k total users, ~5k daily active users on iOS, Android and web) and founded DesitionDev.
+
+Q: What makes him different?
+A: He knows what to ask AI and how. Broad, hands-on knowledge lets him direct a team of AI agents with judgment and catch wrong output.
+
+Q: How does he work with AI agents?
+A: ~10 agents (dev, QA, PM, PO, UX, marketing, support, finance) work 24/7 under human approval to publish, spend or delete; mandatory QA with evidence; security review; and automated tests. Models: OpenAI, Anthropic, Grok and Google Gemini, plus Nano Banana (images) and Veo (video).
+
+Q: Is he available?
+A: Open for consulting and select project work; not seeking full-time roles. Contact: info@desitiondev.com.
+
+## Links
+
+- Site: https://daniel-suarez.desitiondev.com/
+- DesitionDev: https://desitiondev.com/en/
+- GitHub: https://github.com/dinels12
+- LinkedIn: https://linkedin.com/in/dinels
+- Aloharmony: https://aloharmony.com

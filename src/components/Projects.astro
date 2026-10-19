@@ -9,16 +9,16 @@ import { personal } from "../data/cv";
 const projects = [
   {
     title: "Aloharmony",
-    subtitle: "Meditation Platform",
+    subtitle: "Therapeutic-music wellness app",
     description:
-      "Built the full product from scratch as CTO/Lead Engineer — React Native mobile app with offline-first architecture, NestJS + GraphQL backend (90+ endpoints), Next.js web platform, and complete AWS infrastructure. Scaled to 45k+ registered users and 5k daily active users.",
+      "As CTO I lead the whole platform — iOS, Android and a new web app built end-to-end — plus the in-house API & CRM, events on Kafka, Metabase analytics and Stripe + RevenueCat subscriptions with a free trial and a store-compliant payment gateway. Shipped app v4 and v5 with a full visual redesign, partner integrations, SEO/GEO and on-brand AI image generation.",
     image: "/projects/aloharmony.webp",
     placeholderGradient: "from-blue-50 to-indigo-100",
-    tags: ["React Native", "Next.js", "NestJS", "GraphQL", "AWS", "Stripe"],
+    tags: ["React Native", "Next.js", "NestJS", "Kafka", "Metabase", "Stripe", "RevenueCat", "AWS", "AI agents"],
     metrics: [
-      { value: "45k+", label: "Users" },
-      { value: "5k", label: "DAU" },
-      { value: "33k ARR", label: "Revenue" },
+      { value: "~52k", label: "Total users" },
+      { value: "~5k", label: "Daily active users" },
+      { value: "~10", label: "AI agents, 24/7" },
     ],
     links: [
       { label: "Live", href: "https://aloharmony.com" },
@@ -95,14 +95,14 @@ const projects = [
           <!-- Image / placeholder -->
           <div class={`relative aspect-4/3 md:aspect-auto bg-linear-to-br ${p.placeholderGradient} overflow-hidden`}>
             {p.image
-              ? <img src={p.image} alt={p.title} class="w-full h-full object-contain" loading="lazy" />
+              ? <img src={p.image} alt={`${p.title} — ${p.subtitle} screenshot`} width="1200" height="730" class="w-full h-full object-contain" loading="lazy" decoding="async" />
               : (
                 <div class="absolute inset-0 flex items-center justify-center">
                   <div class="text-center">
                     <div class="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center mx-auto mb-3 shadow-sm">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                     </div>
-                    <p class="text-xs text-muted/70">Add screenshot to<br/>/public/projects/</p>
+                    <p class="text-xs text-muted">Add screenshot to<br/>/public/projects/</p>
                   </div>
                 </div>
               )
@@ -144,7 +144,7 @@ const projects = [
             {p.links.length > 0 && (
               <div class="flex gap-3 mt-6">
                 {p.links.map(l => (
-                  <a href={l.href} target="_blank" rel="noopener noreferrer"
+                  <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} — ${l.label} (opens in a new tab)`}
                     class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent no-underline hover:text-accent2 transition-colors">
                     {l.label}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -164,7 +164,7 @@ const projects = [
           <!-- Image / placeholder -->
           <div class={`relative h-44 bg-linear-to-br ${p.placeholderGradient}`}>
             {p.image
-              ? <img src={p.image} alt={p.title} class="w-full h-full object-cover" loading="lazy" />
+              ? <img src={p.image} alt={`${p.title} — ${p.subtitle} screenshot`} width="1200" height="730" class="w-full h-full object-cover" loading="lazy" decoding="async" />
               : (
                 <div class="absolute inset-0 flex items-center justify-center opacity-40">
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -187,7 +187,7 @@ const projects = [
             {p.links.length > 0 && (
               <div class="flex gap-3 mt-6">
                 {p.links.map(l => (
-                  <a href={l.href} target="_blank" rel="noopener noreferrer"
+                  <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} — ${l.label} (opens in a new tab)`}
                     class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent no-underline hover:text-accent2 transition-colors">
                     {l.label}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>

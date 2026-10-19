@@ -1,0 +1,30 @@
+---
+import { achievements } from "../data/cv";
+---
+
+<section id="impact" class="py-24 bg-canvas" aria-labelledby="impact-title">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-12 max-w-2xl">
+      <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">Aloharmony · 2024–2026</p>
+      <h2 id="impact-title" class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Impact</h2>
+      <p class="text-base text-ink2 leading-relaxed">
+        What changed for a therapeutic-music wellness app with ~52k total users and ~5k daily active users on iOS, Android and web — from monetization and
+        architecture to data, design and discoverability.
+      </p>
+    </div>
+
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {achievements.map((a) => (
+        <li class="reveal bg-surface border border-border rounded-xl p-6 flex flex-col hover:border-border2 hover:shadow-sm transition-all duration-200">
+          <h3 class="font-display font-semibold text-lg text-ink mb-2 leading-snug">{a.title}</h3>
+          <p class="text-sm text-ink2 leading-relaxed mb-4 flex-1">{a.result}</p>
+          <div class="flex flex-wrap gap-1.5">
+            {a.tags.map((t) => (
+              <span class="text-xs bg-tag-bg text-tag-text border border-blue-100 px-2.5 py-0.5 rounded-full font-medium">{t}</span>
+            ))}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
