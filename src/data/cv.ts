@@ -7,7 +7,7 @@ export const personal = {
   jobTitle: "CTO / Sr. Software Engineer",
   tagline: "I know what to ask AI — and how — to ship products people actually use.",
   summary:
-    "CTO / Sr. Software Engineer at Aloharmony, a therapeutic-music wellness app with ~52k users on iOS, Android and web. 6 years shipping web and mobile products across the full stack. My edge: broad, hands-on knowledge that lets me know what to ask AI and how — so I can direct a team of AI agents with real engineering judgment.",
+    "CTO / Sr. Software Engineer at Aloharmony, a therapeutic-music wellness app with ~52k total users and ~5k daily active users on iOS, Android and web. Remote from Argentina; 6 years shipping web and mobile products across the full stack. My edge: broad, hands-on knowledge that lets me know what to ask AI and how — so I can direct a team of AI agents with real engineering judgment.",
   location: "Buenos Aires, Argentina",
   timezone: "UTC-3",
   email: "info@desitiondev.com",
@@ -25,7 +25,7 @@ export const experience = [
   {
     role: "Sr. Software Engineer / CTO",
     company: "Aloharmony",
-    location: "USA",
+    location: "Argentina · Remote",
     period: "Oct 2024 – Present",
     current: true,
     bullets: [
@@ -55,7 +55,7 @@ export const experience = [
   {
     role: "Full Stack Developer",
     company: "Thought Media",
-    location: "USA",
+    location: "Argentina · Remote",
     period: "Jan 2021 – Jan 2022",
     current: false,
     bullets: [
@@ -111,7 +111,7 @@ export const aloharmony = {
   name: "Aloharmony",
   url: "https://aloharmony.com",
   description:
-    "Wellness app with therapeutic music, ~52k users across iOS, Android and web.",
+    "Wellness app with therapeutic music: ~52k total users and ~5k daily active users across iOS, Android and web.",
   users: "~52k",
   platforms: ["iOS", "Android", "Web"],
 };
@@ -120,14 +120,14 @@ export const achievements = [
   {
     title: "Store-compliant monetization",
     result:
-      "Split purchase flows between the new web app and a store-compliant payment gateway, so users can buy where it suits them without breaking App Store / Google Play rules.",
-    tags: ["Payments", "RevenueCat", "Compliance"],
+      "Split purchase flows between the new web app and a store-compliant payment gateway, so users can buy where it suits them without breaking App Store / Google Play rules — powered by Stripe and RevenueCat.",
+    tags: ["Stripe", "RevenueCat", "Compliance"],
   },
   {
     title: "Free trial, cross-platform",
     result:
       "Launched the free-trial experience end-to-end, giving new users a frictionless way to try the product before subscribing.",
-    tags: ["RevenueCat", "Growth"],
+    tags: ["RevenueCat", "Stripe", "Growth"],
   },
   {
     title: "New web app, end-to-end",
@@ -150,7 +150,7 @@ export const achievements = [
   {
     title: "Partner integrations",
     result:
-      "Built partner integrations that open new distribution channels for the product.",
+      "Built integrations with partner platforms that open new distribution channels for the product.",
     tags: ["Integrations", "APIs"],
   },
   {
@@ -174,8 +174,8 @@ export const achievements = [
   {
     title: "AI image generation on-brand",
     result:
-      "Built AI image generation grounded in the design system, producing on-brand visuals for content at scale.",
-    tags: ["Generative AI", "Design system"],
+      "Built AI image generation grounded in the design system — Google Gemini with Nano Banana for images and Veo for video — producing on-brand visuals for content.",
+    tags: ["Gemini", "Nano Banana", "Veo", "Design system"],
   },
 ];
 
@@ -184,6 +184,14 @@ export const aiMethod = {
   headline: "Knowing what to ask AI — and how.",
   intro:
     "I run Aloharmony's platform with a team of ~10 AI agents working 24/7. The value isn't the agents; it's the judgment directing them. Broad, hands-on knowledge across product, code, infrastructure, data and growth lets me know what to ask, how to ask it, and when an answer is wrong.",
+  models: [
+    { name: "OpenAI", use: "language models" },
+    { name: "Anthropic", use: "language models" },
+    { name: "Grok", use: "language models (latest current model)" },
+    { name: "Google Gemini", use: "Google model family" },
+    { name: "Nano Banana", use: "image generation (Google)" },
+    { name: "Veo", use: "video generation (Google)" },
+  ],
   roles: ["Development", "QA", "Project management", "Product ownership", "UX", "Marketing", "Support", "Finance"],
   governance: [
     { title: "Human approval", text: "Nothing is published, spent or deleted without my explicit sign-off." },
@@ -196,7 +204,7 @@ export const aiMethod = {
 export const faq = [
   {
     q: "Who is Daniel Suarez?",
-    a: "Daniel Suarez is a CTO / Sr. Software Engineer based in Buenos Aires, Argentina. He leads technology at Aloharmony, a wellness app with therapeutic music used by ~52k people on iOS, Android and web, and founded the DesitionDev product studio.",
+    a: "Daniel Suarez is a CTO / Sr. Software Engineer based in Buenos Aires, Argentina, working remotely. He leads technology at Aloharmony, a wellness app with therapeutic music with ~52k total users and ~5k daily active users on iOS, Android and web, and founded the DesitionDev product studio.",
   },
   {
     q: "What makes Daniel Suarez different as an engineer?",
@@ -204,15 +212,15 @@ export const faq = [
   },
   {
     q: "How does Daniel Suarez work with AI agents?",
-    a: "He runs a team of ~10 AI agents — development, QA, project management, product ownership, UX, marketing, support and finance — working 24/7 under governance: human approval to publish, spend or delete; mandatory QA with evidence; security review; and automated tests.",
+    a: "He runs a team of ~10 AI agents — development, QA, project management, product ownership, UX, marketing, support and finance — working 24/7 under governance: human approval to publish, spend or delete; mandatory QA with evidence; security review; and automated tests. He works with language models from OpenAI, Anthropic, Grok and Google Gemini, plus Nano Banana for image generation and Veo for video.",
   },
   {
     q: "What did Daniel Suarez achieve at Aloharmony between 2024 and 2026?",
-    a: "He split purchase flows between a new web app and a store-compliant payment gateway, launched a free trial with RevenueCat, built the new web app end-to-end, migrated microservices to a monolith, shipped app v4 and v5 with a visual redesign, added partner integrations, SEO/GEO, an in-house API and CRM, Metabase, an events system on Kafka, content management and on-brand AI image generation.",
+    a: "He split purchase flows between a new web app and a store-compliant payment gateway, launched a free trial with RevenueCat, built the new web app end-to-end, migrated microservices to a monolith, shipped app v4 and v5 with a visual redesign, added partner integrations, SEO/GEO, an in-house API and CRM, Metabase, an events system on Kafka, content management and on-brand AI image generation with Gemini (Nano Banana for images, Veo for video).",
   },
   {
     q: "What is Daniel Suarez's tech stack?",
-    a: "React, Next.js, Astro, React Native and Expo on the front end; Node.js, NestJS, GraphQL and REST on the back end; AWS, Docker and Redis for infrastructure; Kafka and Metabase for events and analytics; Stripe and RevenueCat for payments.",
+    a: "React, Next.js, Astro, React Native and Expo on the front end; Node.js, NestJS, GraphQL and REST on the back end; AWS, Docker and Redis for infrastructure; Kafka and Metabase for events and analytics; Stripe and RevenueCat for payments; OpenAI, Anthropic, Grok and Google Gemini (Nano Banana, Veo) for AI.",
   },
   {
     q: "Is Daniel Suarez available for work?",

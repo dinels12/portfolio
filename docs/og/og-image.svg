@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f5f0"/>
+  <rect x="0" y="0" width="12" height="630" fill="#2d5be3"/>
+  <text x="90" y="120" font-family="Menlo, 'JetBrains Mono', monospace" font-size="24" letter-spacing="4" fill="#2d5be3">DANIEL-SUAREZ.DESITIONDEV.COM</text>
+  <text x="90" y="230" font-family="Georgia, 'Lora', serif" font-size="88" font-weight="700" fill="#1a1814">Daniel Suarez</text>
+  <text x="90" y="310" font-family="Georgia, 'Lora', serif" font-size="50" font-style="italic" fill="#3d3a34">CTO &amp; Sr. Software Engineer</text>
+  <rect x="90" y="370" width="4" height="110" fill="#2d5be3"/>
+  <text font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="36" fill="#1a1814">
+    <tspan x="120" y="412">Knowing <tspan font-weight="700">what to ask AI — and how</tspan>.</tspan>
+    <tspan x="120" y="462" fill="#3d3a34">Directing a governed team of AI agents with judgment.</tspan>
+  </text>
+  <text x="90" y="565" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="26" fill="#6b645b">Aloharmony · ~52k total users · iOS · Android · Web · Argentina · Remote</text>
+</svg>

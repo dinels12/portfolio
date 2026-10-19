@@ -17,6 +17,12 @@ import { aiMethod } from "../data/cv";
             <li class="text-xs bg-surface2 text-ink2 border border-border px-2.5 py-1 rounded font-medium">{r}</li>
           ))}
         </ul>
+        <p class="text-sm font-semibold text-ink mt-6 mb-3">Models I direct:</p>
+        <ul class="flex flex-col gap-1.5 text-sm text-ink2" aria-label="AI models">
+          {aiMethod.models.map((m) => (
+            <li><strong class="text-ink font-semibold">{m.name}</strong> — {m.use}</li>
+          ))}
+        </ul>
       </div>
 
       <div>

@@ -10,7 +10,7 @@ interface Props {
 }
 const {
   title = "Daniel Suarez — CTO & Sr. Software Engineer | AI-directed engineering",
-  description = "Daniel Suarez, CTO / Sr. Software Engineer at Aloharmony (~52k users, iOS, Android, web). Knows what to ask AI and how: broad full-stack knowledge directing a governed team of AI agents.",
+  description = "Daniel Suarez, CTO / Sr. Software Engineer at Aloharmony (~52k total users, ~5k DAU; iOS, Android, web), remote from Argentina. Knows what to ask AI and how: broad full-stack knowledge directing a governed team of AI agents.",
   pageType = "WebPage",
   ogType = "website",
 } = Astro.props;
@@ -33,6 +33,7 @@ const graph: any[] = [
     jobTitle: personal.jobTitle,
     description: personal.summary,
     address: { "@type": "PostalAddress", addressLocality: "Buenos Aires", addressCountry: "AR" },
+    homeLocation: { "@type": "Place", name: "Argentina" },
     worksFor: [
       { "@type": "Organization", name: "Aloharmony", url: aloharmony.url },
     ],
@@ -48,7 +49,7 @@ const graph: any[] = [
       "React", "Next.js", "Astro", "React Native", "Expo",
       "Node.js", "NestJS", "GraphQL", "REST APIs",
       "AWS", "Docker", "Redis", "Kafka", "Metabase",
-      "RevenueCat", "Stripe", "SEO", "Generative Engine Optimization",
+      "RevenueCat", "Stripe", "OpenAI", "Anthropic", "Grok", "Google Gemini", "Nano Banana", "Veo", "SEO", "Generative Engine Optimization",
     ],
     knowsLanguage: ["es", "en"],
     sameAs: ["https://desitiondev.com", personal.github, personal.linkedin],
